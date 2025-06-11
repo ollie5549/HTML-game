@@ -1,30 +1,9 @@
-<!DOCTYPE html>
 <html>
   <head>
-    <title>Web Audio API Test</title>
+    <title>Web Audio Example</title>
   </head>
   <body>
     <button onclick="playTone()">Play Tone</button>
-
-    <script>
-      let audioContext;
-
-      function playTone() {
-        // Create audio context on user interaction
-        audioContext = new (window.AudioContext || window.webkitAudioContext)();
-
-        // Create oscillator
-        const oscillator = audioContext.createOscillator();
-        oscillator.type = "sine";
-        oscillator.frequency.value = 440;
-
-        // Connect to speakers
-        oscillator.connect(audioContext.destination);
-
-        // Start + stop
-        oscillator.start();
-        oscillator.stop(audioContext.currentTime + 1);
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
